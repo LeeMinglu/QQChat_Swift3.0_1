@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A2A97831DED370F00C01CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A97821DED370F00C01CD3 /* AppDelegate.swift */; };
+		1A2A978A1DED370F00C01CD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A97891DED370F00C01CD3 /* Assets.xcassets */; };
+		1A2A978D1DED370F00C01CD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A978B1DED370F00C01CD3 /* LaunchScreen.storyboard */; };
+		1A2A97951DED378F00C01CD3 /* Controller in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A97941DED378F00C01CD3 /* Controller */; };
+		1A2A97971DED379B00C01CD3 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A97961DED379B00C01CD3 /* Model */; };
+		1A2A97991DED37A300C01CD3 /* View in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A97981DED37A300C01CD3 /* View */; };
+		1A2A979B1DED393700C01CD3 /* autoMessages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A979A1DED393700C01CD3 /* autoMessages.plist */; };
+		1A2A979D1DED394100C01CD3 /* send.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A979C1DED394100C01CD3 /* send.plist */; };
+		1A2A979F1DED42E400C01CD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A979E1DED42E400C01CD3 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A2A977F1DED370F00C01CD3 /* QQChat_Swift3.0_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQChat_Swift3.0_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2A97821DED370F00C01CD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A2A97891DED370F00C01CD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A2A978C1DED370F00C01CD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A2A978E1DED370F00C01CD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2A97941DED378F00C01CD3 /* Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controller; sourceTree = "<group>"; };
+		1A2A97961DED379B00C01CD3 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		1A2A97981DED37A300C01CD3 /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
+		1A2A979A1DED393700C01CD3 /* autoMessages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoMessages.plist; sourceTree = "<group>"; };
+		1A2A979C1DED394100C01CD3 /* send.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = send.plist; sourceTree = "<group>"; };
+		1A2A979E1DED42E400C01CD3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A2A977C1DED370F00C01CD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A2A97761DED370F00C01CD3 = {
+			isa = PBXGroup;
+			children = (
+				1A2A97811DED370F00C01CD3 /* QQChat_Swift3.0_1 */,
+				1A2A97801DED370F00C01CD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A2A97801DED370F00C01CD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A977F1DED370F00C01CD3 /* QQChat_Swift3.0_1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A2A97811DED370F00C01CD3 /* QQChat_Swift3.0_1 */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A979E1DED42E400C01CD3 /* Main.storyboard */,
+				1A2A97961DED379B00C01CD3 /* Model */,
+				1A2A97981DED37A300C01CD3 /* View */,
+				1A2A97941DED378F00C01CD3 /* Controller */,
+				1A2A97821DED370F00C01CD3 /* AppDelegate.swift */,
+				1A2A97891DED370F00C01CD3 /* Assets.xcassets */,
+				1A2A978B1DED370F00C01CD3 /* LaunchScreen.storyboard */,
+				1A2A978E1DED370F00C01CD3 /* Info.plist */,
+				1A2A979A1DED393700C01CD3 /* autoMessages.plist */,
+				1A2A979C1DED394100C01CD3 /* send.plist */,
+			);
+			path = QQChat_Swift3.0_1;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A2A977E1DED370F00C01CD3 /* QQChat_Swift3.0_1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2A97911DED370F00C01CD3 /* Build configuration list for PBXNativeTarget "QQChat_Swift3.0_1" */;
+			buildPhases = (
+				1A2A977B1DED370F00C01CD3 /* Sources */,
+				1A2A977C1DED370F00C01CD3 /* Frameworks */,
+				1A2A977D1DED370F00C01CD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQChat_Swift3.0_1;
+			productName = QQChat_Swift3.0_1;
+			productReference = 1A2A977F1DED370F00C01CD3 /* QQChat_Swift3.0_1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A2A97771DED370F00C01CD3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = SocererGroup;
+				TargetAttributes = {
+					1A2A977E1DED370F00C01CD3 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 1A2A977A1DED370F00C01CD3 /* Build configuration list for PBXProject "QQChat_Swift3.0_1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A2A97761DED370F00C01CD3;
+			productRefGroup = 1A2A97801DED370F00C01CD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A2A977E1DED370F00C01CD3 /* QQChat_Swift3.0_1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A2A977D1DED370F00C01CD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2A97971DED379B00C01CD3 /* Model in Resources */,
+				1A2A978D1DED370F00C01CD3 /* LaunchScreen.storyboard in Resources */,
+				1A2A978A1DED370F00C01CD3 /* Assets.xcassets in Resources */,
+				1A2A979F1DED42E400C01CD3 /* Main.storyboard in Resources */,
+				1A2A97951DED378F00C01CD3 /* Controller in Resources */,
+				1A2A97991DED37A300C01CD3 /* View in Resources */,
+				1A2A979D1DED394100C01CD3 /* send.plist in Resources */,
+				1A2A979B1DED393700C01CD3 /* autoMessages.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A2A977B1DED370F00C01CD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2A97831DED370F00C01CD3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1A2A978B1DED370F00C01CD3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A2A978C1DED370F00C01CD3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A2A978F1DED370F00C01CD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A2A97901DED370F00C01CD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A2A97921DED370F00C01CD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = QQChat_Swift3.0_1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SocererGroup.QQChat-Swift3-0-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1A2A97931DED370F00C01CD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = QQChat_Swift3.0_1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SocererGroup.QQChat-Swift3-0-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A2A977A1DED370F00C01CD3 /* Build configuration list for PBXProject "QQChat_Swift3.0_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2A978F1DED370F00C01CD3 /* Debug */,
+				1A2A97901DED370F00C01CD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A2A97911DED370F00C01CD3 /* Build configuration list for PBXNativeTarget "QQChat_Swift3.0_1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2A97921DED370F00C01CD3 /* Debug */,
+				1A2A97931DED370F00C01CD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A2A97771DED370F00C01CD3 /* Project object */;
+}
