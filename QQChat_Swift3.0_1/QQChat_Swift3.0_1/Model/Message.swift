@@ -10,14 +10,13 @@ import UIKit
 
 //定义
 enum LSMessageType {
-    case LSMessageSelf;
-    case LSMessageOther
+    case LSMessageSelf,LSMessageOther
 }
 
 class Message: NSObject {
     var text: String?
     var time: String?
-    var type: NSNumber? = 0
+    var type: NSNumber?
     
     let properties = ["text", "time", "type"]
     override var description: String {

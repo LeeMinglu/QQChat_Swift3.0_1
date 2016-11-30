@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("&&&&&&" + "\(messages.count)")
-        for message in messages {
-            print(message)
+        for messf in messageFrames {
+            print(messf.message.text!)
         }
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +24,27 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    lazy var messages: [Message] = {
+    lazy var messageFrames: [LSMessageFrame]! = {
         let path = Bundle.main.path(forResource: "send.plist", ofType: nil)
         
         let messageArray = NSArray(contentsOfFile: path!)
         
-        return Message.dict2Model(list: messageArray as! [[String : AnyObject]])
+        let messages: [Message]! = Message.dict2Model(list: messageArray! as! [[String : AnyObject]])
+        
+        var messageFrames: [LSMessageFrame]! = []
+        for message in messages {
+            let messageFrame = LSMessageFrame.init()
+            messageFrame.message = message
+            messageFrames.append(messageFrame)
+        }
+        print("**************")
+        print(messageFrames.count)
+        return messageFrames
     }()
+    
+    
+    
+   
 
 
 }

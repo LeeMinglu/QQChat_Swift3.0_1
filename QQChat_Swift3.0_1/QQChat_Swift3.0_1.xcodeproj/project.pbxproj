@@ -12,6 +12,9 @@
 		1A2A978D1DED370F00C01CD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A978B1DED370F00C01CD3 /* LaunchScreen.storyboard */; };
 		1A2A979B1DED393700C01CD3 /* autoMessages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A979A1DED393700C01CD3 /* autoMessages.plist */; };
 		1A2A979D1DED394100C01CD3 /* send.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A2A979C1DED394100C01CD3 /* send.plist */; };
+		1AA0A8991DEEA90400C9B3A5 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0A8981DEEA90400C9B3A5 /* String+Extention.swift */; };
+		1AA0A89B1DEEACFB00C9B3A5 /* LSMessageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0A89A1DEEACFB00C9B3A5 /* LSMessageFrame.swift */; };
+		1AA0A89D1DEEC8AC00C9B3A5 /* LSMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0A89C1DEEC8AC00C9B3A5 /* LSMessageCell.swift */; };
 		1AE3D3361DED897900BA8292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE3D3351DED897900BA8292 /* ViewController.swift */; };
 		1AE3D3391DED899300BA8292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE3D3381DED899300BA8292 /* Main.storyboard */; };
 		1AE3D33B1DED89C900BA8292 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE3D33A1DED89C900BA8292 /* Message.swift */; };
@@ -25,6 +28,9 @@
 		1A2A978E1DED370F00C01CD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A2A979A1DED393700C01CD3 /* autoMessages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoMessages.plist; sourceTree = "<group>"; };
 		1A2A979C1DED394100C01CD3 /* send.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = send.plist; sourceTree = "<group>"; };
+		1AA0A8981DEEA90400C9B3A5 /* String+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		1AA0A89A1DEEACFB00C9B3A5 /* LSMessageFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSMessageFrame.swift; sourceTree = "<group>"; };
+		1AA0A89C1DEEC8AC00C9B3A5 /* LSMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSMessageCell.swift; sourceTree = "<group>"; };
 		1AE3D3351DED897900BA8292 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AE3D3381DED899300BA8292 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1AE3D33A1DED89C900BA8292 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -69,14 +75,24 @@
 				1A2A978E1DED370F00C01CD3 /* Info.plist */,
 				1A2A979A1DED393700C01CD3 /* autoMessages.plist */,
 				1A2A979C1DED394100C01CD3 /* send.plist */,
+				1AA0A8971DEEA90400C9B3A5 /* Tools */,
 			);
 			path = QQChat_Swift3.0_1;
+			sourceTree = "<group>";
+		};
+		1AA0A8971DEEA90400C9B3A5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				1AA0A8981DEEA90400C9B3A5 /* String+Extention.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		1AE3D3331DED895600BA8292 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1AE3D33A1DED89C900BA8292 /* Message.swift */,
+				1AA0A89A1DEEACFB00C9B3A5 /* LSMessageFrame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				1AE3D3381DED899300BA8292 /* Main.storyboard */,
+				1AA0A89C1DEEC8AC00C9B3A5 /* LSMessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +140,7 @@
 		1A2A97771DED370F00C01CD3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LS;
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = SocererGroup;
@@ -171,7 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA0A89D1DEEC8AC00C9B3A5 /* LSMessageCell.swift in Sources */,
 				1AE3D3361DED897900BA8292 /* ViewController.swift in Sources */,
+				1AA0A8991DEEA90400C9B3A5 /* String+Extention.swift in Sources */,
+				1AA0A89B1DEEACFB00C9B3A5 /* LSMessageFrame.swift in Sources */,
 				1AE3D33B1DED89C900BA8292 /* Message.swift in Sources */,
 				1A2A97831DED370F00C01CD3 /* AppDelegate.swift in Sources */,
 			);
