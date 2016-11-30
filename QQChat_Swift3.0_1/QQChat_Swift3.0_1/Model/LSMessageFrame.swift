@@ -10,13 +10,13 @@ import UIKit
 
 class LSMessageFrame: NSObject {
     
-    var timeFrame: CGRect! = nil
-    var iconFrame: CGRect! = nil
-    var messageFrame: CGRect! = nil
+    var timeFrame: CGRect!
+    var iconFrame: CGRect!
+    var messageFrame: CGRect!
     
     let screenBounds = UIScreen.main.bounds
     
-    let fontTime = UIFont.systemFont(ofSize: 8.0)
+    let fontTime = UIFont.systemFont(ofSize: 12.0)
     let fontMessage = UIFont.systemFont(ofSize: 10.0)
     
     var cellHeight: CGFloat!
@@ -24,31 +24,34 @@ class LSMessageFrame: NSObject {
     
     let margin: CGFloat = 10
     let iconWidth: CGFloat = 20
-    let iconHeight: CGFloat = 20
+    let iconHeight: CGFloat = 25
     
     var message: Message! {
         didSet {
+            var timeX: CGFloat = 0
             
             let timeSize = sizeWithText(message.text! as NSString, font: fontTime, maxSize: CGSize(width: screenBounds.width, height: CGFloat(MAXFLOAT)))
-            let timeW = timeSize.width
+            let timeW = screenBounds.width
             let timeH = timeSize.height
-            let timeX = (screenBounds.width - timeW) / 2
+             timeX = (screenBounds.width - timeW) / 2
             let timeY = margin
             
             self.timeFrame = CGRect(x: timeX, y: timeY, width: timeW, height: timeH)
             
-            let iconX = margin
-            let iconY = self.timeFrame.maxY
             let iconWidth = self.iconWidth
             let iconHeight = self.iconHeight
+            let iconX = screenBounds.width - margin - iconWidth
+            let iconY = self.timeFrame.maxY
+            
             self.iconFrame = CGRect(x: iconX, y: iconY, width: iconWidth, height: iconHeight)
             
             let messageSize: CGSize = sizeWithText(message.text! as NSString, font: fontMessage, maxSize: CGSize(width: screenBounds.width - margin - self.iconFrame.maxX, height: CGFloat(MAXFLOAT)))
             
-            let messageX = self.iconFrame.maxX + margin
-            let messageY = self.timeFrame.maxY + margin + CGFloat(3)
             let messageW = messageSize.width
             let messageH = messageSize.height
+            let messageX = screenBounds.width - margin - messageW
+            let messageY = self.timeFrame.maxY + margin + CGFloat(3)
+
             
             self.messageFrame = CGRect(x: messageX, y: messageY, width: messageW, height: messageH)
             

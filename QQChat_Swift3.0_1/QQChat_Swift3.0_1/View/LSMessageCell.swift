@@ -12,6 +12,8 @@ class LSMessageCell: UITableViewCell {
     var timeLabel: UILabel!
     var iconView: UIImageView!
     var messageView: UILabel!
+    let fontTime = UIFont.systemFont(ofSize: 12.0)
+    let fontMessage = UIFont.systemFont(ofSize: 10.0)
     
     var cellFrame: LSMessageFrame! {
         didSet {
@@ -55,7 +57,13 @@ class LSMessageCell: UITableViewCell {
         if !self.isEqual(nil) {
             
             let timeLabel = UILabel.init()
-            self.timeLabel = timeLabel
+                        self.timeLabel = timeLabel
+//            self.timeLabel.sizeToFit()
+            
+            self.timeLabel.textAlignment = NSTextAlignment.center
+            self.timeLabel.font = fontTime
+
+            self.timeLabel.adjustsFontSizeToFitWidth = true
             self.contentView.addSubview(self.timeLabel)
             
             
@@ -65,6 +73,10 @@ class LSMessageCell: UITableViewCell {
             
             let messageView = UILabel.init()
             self.messageView = messageView
+            self.messageView.font = fontMessage
+            self.messageView.sizeToFit()
+            self.messageView.adjustsFontSizeToFitWidth = true
+            self.messageView.numberOfLines = 0
             self.contentView.addSubview(self.messageView)
         
         }

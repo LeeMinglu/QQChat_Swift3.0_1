@@ -8,16 +8,62 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    var tableView: UITableView!
+    let screenBounds = UIScreen.main.bounds
+    
+    let identifier = "message"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        for messf in messageFrames {
-            print(messf.message.text!)
-        }
+        let frame = CGRect(origin: CGPoint.init(x: 0, y: 0), size: CGSize(width: screenBounds.width, height: screenBounds.height))
+        
+        let tableView = UITableView.init(frame: screenBounds)
+//        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.tableView = tableView
+        
+        self.view.addSubview(tableView)
+        
+        self.tableView.register(LSMessageCell.self, forCellReuseIdentifier: identifier)
+        
+        
        
     }
+    
+    // MARK: --实现tableView的代理方法--
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.messageFrames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let messageFrame = self.messageFrames[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! LSMessageCell
+        
+        cell.cellFrame = messageFrame
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let messageFrame = self.messageFrames[indexPath.row]
+        return messageFrame.cellHeight!
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
