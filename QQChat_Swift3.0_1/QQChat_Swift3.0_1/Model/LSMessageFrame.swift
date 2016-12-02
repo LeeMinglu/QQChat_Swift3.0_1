@@ -16,8 +16,8 @@ class LSMessageFrame: NSObject {
     
     let screenBounds = UIScreen.main.bounds
     
-    let fontTime = UIFont.systemFont(ofSize: 12.0)
-    let fontMessage = UIFont.systemFont(ofSize: 10.0)
+    let fontTime = UIFont.systemFont(ofSize: 10.0)
+    let fontMessage = UIFont.systemFont(ofSize: 12.0)
     
     var cellHeight: CGFloat!
     
@@ -40,17 +40,23 @@ class LSMessageFrame: NSObject {
             
             let iconWidth = self.iconWidth
             let iconHeight = self.iconHeight
-            let iconX = screenBounds.width - margin - iconWidth
+            var iconX = screenBounds.width - margin - iconWidth
             let iconY = self.timeFrame.maxY
+            if message.type == 1 {
+                iconX = margin
+            }
             
             self.iconFrame = CGRect(x: iconX, y: iconY, width: iconWidth, height: iconHeight)
             
-            let messageSize: CGSize = sizeWithText(message.text! as NSString, font: fontMessage, maxSize: CGSize(width: screenBounds.width - margin - self.iconFrame.maxX, height: CGFloat(MAXFLOAT)))
+            let messageSize: CGSize = sizeWithText(message.text! as NSString, font: fontMessage, maxSize: CGSize(width: CGFloat(240), height: CGFloat(MAXFLOAT)))
             
             let messageW = messageSize.width
             let messageH = messageSize.height
-            let messageX = screenBounds.width - margin - messageW
-            let messageY = self.timeFrame.maxY + margin + CGFloat(3)
+            var messageX = screenBounds.width - messageW - margin - iconWidth - margin
+            if message.type == 1 {
+                messageX = margin * 2 + self.iconWidth
+            }
+            let messageY = self.timeFrame.maxY + margin
 
             
             self.messageFrame = CGRect(x: messageX, y: messageY, width: messageW, height: messageH)

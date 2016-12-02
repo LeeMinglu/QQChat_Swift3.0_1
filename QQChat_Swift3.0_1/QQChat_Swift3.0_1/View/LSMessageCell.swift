@@ -12,8 +12,8 @@ class LSMessageCell: UITableViewCell {
     var timeLabel: UILabel!
     var iconView: UIImageView!
     var messageView: UILabel!
-    let fontTime = UIFont.systemFont(ofSize: 12.0)
-    let fontMessage = UIFont.systemFont(ofSize: 10.0)
+    let fontTime = UIFont.systemFont(ofSize: 10.0)
+    let fontMessage = UIFont.systemFont(ofSize: 12.0)
     
     var cellFrame: LSMessageFrame! {
         didSet {
@@ -26,14 +26,13 @@ class LSMessageCell: UITableViewCell {
             
             //设置数据
             self.timeLabel.text = message.time!
-            self.iconView.image = UIImage.init(named: "me")
+            
             self.messageView.text = message.text
             
             if message.type == 0 {
-                print("头像在右")
+                self.iconView.image = UIImage.init(named: "me")
             }else {
-                 print("头像在左")
-            }
+                self.iconView.image = UIImage.init(named: "other")            }
             
             
         
@@ -77,6 +76,7 @@ class LSMessageCell: UITableViewCell {
             self.messageView.sizeToFit()
             self.messageView.adjustsFontSizeToFitWidth = true
             self.messageView.numberOfLines = 0
+//            self.messageView.backgroundColor = UIColor.blue
             self.contentView.addSubview(self.messageView)
         
         }
