@@ -32,8 +32,6 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.tableView.register(LSMessageCell.self, forCellReuseIdentifier: identifier)
         
-        
-       
     }
     
     // MARK: --实现tableView的代理方法--
@@ -42,12 +40,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messageFrames.count
+        return self.messageFrames!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let messageFrame = self.messageFrames[indexPath.row]
+        let messageFrame = self.messageFrames?[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! LSMessageCell
         
@@ -58,7 +56,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let messageFrame = self.messageFrames[indexPath.row]
+        let messageFrame = self.messageFrames![indexPath.row]
         return messageFrame.cellHeight!
     }
     
@@ -75,17 +73,29 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         let messageArray = NSArray(contentsOfFile: path!)
         
-        let messages: [Message]! = Message.dict2Model(list: messageArray! as! [[String : AnyObject]])
+        let messages = Message.dict2Model(list: messageArray! as! [[String : AnyObject]])
         
-        var messageFrames: [LSMessageFrame]! = []
-        for message in messages {
+        var messageFramees: [LSMessageFrame]! = []
+        for message: Message in messages {
             let messageFrame = LSMessageFrame.init()
+            var lastFrame: LSMessageFrame! = nil
+            print("=====" + "\(message)")
+            if messageFramees!.count != 0  {
+                lastFrame = messageFramees!.last!
+                if lastFrame.message.time! == message.time {
+                    messageFrame.isTimeHide = true
+                }
+            
+            }
+            
+            
+//            print("____" +)
             messageFrame.message = message
-            messageFrames.append(messageFrame)
+            messageFramees!.append(messageFrame)
         }
         print("**************")
-        print(messageFrames.count)
-        return messageFrames
+//        print(messageFrames!.count)
+        return messageFramees
     }()
     
     

@@ -13,6 +13,7 @@ class LSMessageFrame: NSObject {
     var timeFrame: CGRect!
     var iconFrame: CGRect!
     var messageFrame: CGRect!
+    var isTimeHide: Bool! = false
     
     let screenBounds = UIScreen.main.bounds
     
@@ -28,15 +29,19 @@ class LSMessageFrame: NSObject {
     
     var message: Message! {
         didSet {
+            
             var timeX: CGFloat = 0
             
             let timeSize = sizeWithText(message.text! as NSString, font: fontTime, maxSize: CGSize(width: screenBounds.width, height: CGFloat(MAXFLOAT)))
             let timeW = screenBounds.width
             let timeH = timeSize.height
-             timeX = (screenBounds.width - timeW) / 2
+            timeX = (screenBounds.width - timeW) / 2
             let timeY = margin
-            
-            self.timeFrame = CGRect(x: timeX, y: timeY, width: timeW, height: timeH)
+            if isTimeHide! {
+                self.timeFrame = CGRect(x: timeX, y: timeY, width: timeW, height: timeH)
+            }else {
+                self.timeFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            }
             
             let iconWidth = self.iconWidth
             let iconHeight = self.iconHeight
