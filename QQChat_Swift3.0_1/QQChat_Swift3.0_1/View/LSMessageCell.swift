@@ -23,7 +23,7 @@ class LSMessageCell: UITableViewCell {
             self.timeLabel.frame = cellFrame.timeFrame
             self.iconView.frame = cellFrame.iconFrame
             
-            let messageBackground = UIImage(named: <#T##String#>)
+//            let messageBackground = UIImage(named: String)
             
             self.messageView.frame = cellFrame.messageFrame
             
