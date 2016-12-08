@@ -37,7 +37,7 @@ class LSMessageFrame: NSObject {
             let timeH = timeSize.height
             timeX = (screenBounds.width - timeW) / 2
             let timeY = margin
-            if isTimeHide! {
+            if !isTimeHide {
                 self.timeFrame = CGRect(x: timeX, y: timeY, width: timeW, height: timeH)
             }else {
                 self.timeFrame = CGRect(x: 0, y: 0, width: 0, height: 0)

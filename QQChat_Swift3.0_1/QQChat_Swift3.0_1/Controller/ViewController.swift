@@ -82,7 +82,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             print("=====" + "\(message)")
             if messageFramees!.count != 0  {
                 lastFrame = messageFramees!.last!
-                if lastFrame.message.time! == message.time {
+                if lastFrame.message.time == message.time {
                     messageFrame.isTimeHide = true
                 }
             
