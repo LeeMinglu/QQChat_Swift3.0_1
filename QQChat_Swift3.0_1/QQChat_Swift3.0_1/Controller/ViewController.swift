@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var textView: UIView!
     
     var tableView: UITableView!
     let screenBounds = UIScreen.main.bounds
@@ -30,10 +31,14 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.tableView.backgroundColor = UIColor.gray
         self.view.addSubview(tableView)
         
+        //注册一个cell
         self.tableView.register(LSMessageCell.self, forCellReuseIdentifier: identifier)
         
         //去掉分隔线
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        //添加聊天输入view
+        self.view.addSubview(textView!)
         
     }
     

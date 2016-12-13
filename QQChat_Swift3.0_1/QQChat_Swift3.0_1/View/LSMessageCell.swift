@@ -53,12 +53,14 @@ class LSMessageCell: UITableViewCell {
                 
             }
 
+            //此代码已经废弃
 //            imageNormal!.stretchableImage(withLeftCapWidth: Int(imageNormal!.size.width * 0.4), topCapHeight: Int(imageNormal!.size.width * 0.4))
             
             
             self.messageView.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
-            
-            let insets = UIEdgeInsets(top: 40, left: 30, bottom: 40, right: 30)
+      
+            //代码使用图片拉伸
+//            let insets = UIEdgeInsets(top: 40, left: 30, bottom: 40, right: 30)
             
 //            imageNormal!.resizableImage(withCapInsets: insets, resizingMode: UIImageResizingMode.stretch)
 
