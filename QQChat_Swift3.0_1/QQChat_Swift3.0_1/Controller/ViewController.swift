@@ -19,7 +19,6 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let frame = CGRect(origin: CGPoint.init(x: 0, y: 0), size: CGSize(width: screenBounds.width, height: screenBounds.height))
         
         let tableView = UITableView.init(frame: screenBounds)
 //        
@@ -32,6 +31,9 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.view.addSubview(tableView)
         
         self.tableView.register(LSMessageCell.self, forCellReuseIdentifier: identifier)
+        
+        //去掉分隔线
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
     }
     

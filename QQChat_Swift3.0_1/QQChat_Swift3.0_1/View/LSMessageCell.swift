@@ -52,9 +52,7 @@ class LSMessageCell: UITableViewCell {
                 self.messageView.setTitleColor(UIColor.black, for: UIControlState.normal)
                 
             }
-            
-            let imageNormal = UIImage(named: nor)
-            let imageHighlighted = UIImage(named: high)
+
 //            imageNormal!.stretchableImage(withLeftCapWidth: Int(imageNormal!.size.width * 0.4), topCapHeight: Int(imageNormal!.size.width * 0.4))
             
             
