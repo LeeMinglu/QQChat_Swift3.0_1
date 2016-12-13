@@ -28,6 +28,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
         self.tableView = tableView
         
+        self.tableView.backgroundColor = UIColor.gray
         self.view.addSubview(tableView)
         
         self.tableView.register(LSMessageCell.self, forCellReuseIdentifier: identifier)
