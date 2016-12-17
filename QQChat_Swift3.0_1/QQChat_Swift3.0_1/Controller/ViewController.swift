@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UNUserNotificationCenterDelegate{
     
     @IBOutlet weak var talkView: UIView!
     
@@ -22,6 +22,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let identifier = "message"
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,25 +51,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //添加聊天输入view
         self.view.addSubview(talkView!)
         
-//        let center = UNUserNotificationCenter.current()
-//        self.
+        let center = NotificationCenter.default
+        
+        center.addObserver(self, selector: #selector(self.keyboardWillChangeFrame(note:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        
         
         self.input.delegate = self
         self.input.resignFirstResponder()
-        
-        
+  
+    }
     
+    func keyboardWillChangeFrame(note: Notification) {
+        let keyboardDuration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let keyboardFrame = note.userInfo![UIKeyboardFrameEndUserInfoKey] as! CGRect
+        //取得frame的最终Y值
+        let transformY = keyboardFrame.origin.y - self.view.bounds.height
+        
+                
+//        设置View的约束
+        self.view.transform = CGAffineTransform.init(translationX: 0, y: transformY)
     }
     
     
-       
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if let name = response.notification.request.content.userInfo[UIKeyboardFrameEndUserInfoKey] as? String {
-            print("I know it's you! \(name)")
-        }
-        completionHandler()
-    }
     
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+   
     // MARK: --实现tableView的代理方法--
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
