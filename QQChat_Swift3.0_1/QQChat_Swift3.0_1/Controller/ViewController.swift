@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import UserNotifications
 
-class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var textView: UIView!
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+    
+    @IBOutlet weak var talkView: UIView!
+    
+    @IBOutlet weak var input: UITextField!
+
     
     var tableView: UITableView!
     let screenBounds = UIScreen.main.bounds
@@ -38,8 +44,25 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         //添加聊天输入view
-        self.view.addSubview(textView!)
+        self.view.addSubview(talkView!)
         
+//        let center = UNUserNotificationCenter.current()
+//        self.
+        
+        self.input.delegate = self
+        self.input.resignFirstResponder()
+        
+        
+    
+    }
+    
+    
+       
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if let name = response.notification.request.content.userInfo[UIKeyboardFrameEndUserInfoKey] as? String {
+            print("I know it's you! \(name)")
+        }
+        completionHandler()
     }
     
     // MARK: --实现tableView的代理方法--
