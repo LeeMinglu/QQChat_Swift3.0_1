@@ -59,7 +59,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.input.delegate = self
         self.input.resignFirstResponder()
+        
+
+        //通过添加手势点击空白位置时键盘隐藏
+        let tapGuesture = UITapGestureRecognizer.init(target: self, action: #selector(tapView(tap:)))
+        
+        self.view.addGestureRecognizer(tapGuesture)
   
+    }
+    
+    func tapView(tap: UITapGestureRecognizer) {
+        
+        self.view.endEditing(true)
     }
     
     func keyboardWillChangeFrame(note: Notification) {
