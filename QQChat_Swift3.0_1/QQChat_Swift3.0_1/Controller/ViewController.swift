@@ -89,6 +89,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //去掉分隔线
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
+        //设置tableViewInsets
+        let insets = UIEdgeInsetsMake(44, 0, 50, 0)
+        self.tableView.contentInset = insets
+        
         //添加聊天输入view
         self.view.addSubview(talkView!)
         
