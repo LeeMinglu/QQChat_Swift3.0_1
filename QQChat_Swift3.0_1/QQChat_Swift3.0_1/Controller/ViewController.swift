@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tableView: UITableView!
     let screenBounds = UIScreen.main.bounds
     
+    var type = 0 ;
+    
     let identifier = "message"
     
     
@@ -36,11 +38,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func autoAnswer() {
+        if self.type == 3 {
+            return
+        }
         sendMessage(type: 1, messge: "我是机器人回答的")
     }
     
     func sendMessage(type: NSNumber, messge: String) {
         
+        if messge.isEmpty {
+            self.type = 3
+            return
+        } else
+        {
+           self.type = 1
+        }
         //初始化模型
         let message: Message = Message.init()
         message.type = type
