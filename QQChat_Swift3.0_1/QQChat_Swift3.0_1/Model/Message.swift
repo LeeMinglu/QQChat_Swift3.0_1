@@ -24,6 +24,9 @@ class Message: NSObject {
         return ("\(dict)")
     }
     // MARK: - 构造函数
+    override init() {
+        
+    }
     init(dict: [String: AnyObject]) {
         super.init()
         setValuesForKeys(dict)

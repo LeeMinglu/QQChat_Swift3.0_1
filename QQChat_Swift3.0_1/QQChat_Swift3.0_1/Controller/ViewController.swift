@@ -22,9 +22,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let identifier = "message"
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+   //发送消息
+        let inputContent = self.input.text!
+        //将内容添加到plist文件中
+        sendMessage(type: 0, messge: inputContent)
+        
+        autoAnswer()
+        
+        print(inputContent)
         return true
+    }
+    
+    func autoAnswer() {
+        sendMessage(type: 1, messge: "我是机器人回答的")
+    }
+    
+    func sendMessage(type: NSNumber, messge: String) {
+        
+        //初始化模型
+        let message: Message = Message.init()
+        message.type = type
+        message.text = messge
+        
+        
+        let time = Date.init()
+        let dateFormat = DateFormatter.init()
+        dateFormat.dateFormat = "今天 HH:mm"
+        let timeString = dateFormat.string(from: time)
+        message.time = timeString
+        
+        //设置frame模型
+        let frameModel = LSMessageFrame.init()
+        frameModel.message = message
+        
+        self.messageFrames.append(frameModel)
+        
+        self.tableView.reloadData()
+        
+        let indexPath = IndexPath.init(row: self.messageFrames.count - 1, section: 0)
+        
+        
+        self.tableView.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        self.input.text = ""
     }
 
 
@@ -76,13 +117,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func keyboardWillChangeFrame(note: Notification) {
         let keyboardDuration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         let keyboardFrame = note.userInfo![UIKeyboardFrameEndUserInfoKey] as! CGRect
-        //取得frame的最终Y值
+        //取得键盘移动的最终Y值
         let transformY = keyboardFrame.origin.y - self.view.bounds.height
         
                 
 //        设置View的约束
         self.view.transform = CGAffineTransform.init(translationX: 0, y: transformY)
     }
+    
+    
     
     
     
